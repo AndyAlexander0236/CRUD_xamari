@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ejemploSQL.MainPage">
+
+     <StackLayout>  
+        <StackLayout>  
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">  
+                <Label Margin="0,0,0,10"  FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                <Image Margin="0,0,0,10" HeightRequest="100" Source="fondo.png" ></Image>
+                <Entry x:Name="txtPersonId" Placeholder="Ingrese un ID"></Entry>  
+                <Entry x:Name="txtName" Placeholder="Ingrese un Nombre"></Entry>  
+                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <ImageButton x:Name="btnAdd"  WidthRequest="200" Source="agregar.png" Clicked="BtnAdd_Clicked" />
+                    <ImageButton x:Name="btnRead" WidthRequest="200" Source="leer.png" Clicked="BtnRead_Clicked" />  
+                </StackLayout>  
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <ImageButton x:Name="btnUpdate" WidthRequest="200" Source="actualizar.png" Clicked="BtnUpdate_Clicked"/>
+                    <ImageButton x:Name="btnDelete" WidthRequest="200" Source="eliminar.png" Clicked="BtnDelete_Clicked" />  
+                </StackLayout>  
+                <ListView x:Name="lstPersons">  
+                    <ListView.ItemTemplate>  
+                        <DataTemplate>  
+                            <TextCell Text="{Binding Name}" Detail="{Binding PersonID}"></TextCell>  
+                        </DataTemplate>  
+                    </ListView.ItemTemplate>  
+                </ListView>  
+  
+            </StackLayout>  
+        </StackLayout>  
+    </StackLayout>  
+
+</ContentPage>
